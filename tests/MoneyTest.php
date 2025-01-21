@@ -11,15 +11,16 @@ class MoneyTest extends TestCase
         $five = new Dollar(5);
 
         // timesメソッドで掛け算（乗算）する
-        $five->times(2);
+        $products = $five->times(2);
 
         // 結果が 10 になったかをテスト
         // $this->assertEquals(期待値, 実際の値);
-        $this->assertEquals(10, $five->amount);
+        $this->assertEquals(10, $products->amount);
 
-        //このようにしたい
+        //Dollarの副作用をどうするか
+        //dollarのtimeメソッドを変更しないとコンパイルできない
         $five->times(3);
-        $this->assertEquals(15, $five->amount);
+        $this->assertEquals(15, $products->amount);
     }
 }
 // コンパイルを通すために必要な四つがある
