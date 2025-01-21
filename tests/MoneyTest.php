@@ -16,6 +16,10 @@ class MoneyTest extends TestCase
         // 結果が 10 になったかをテスト
         // $this->assertEquals(期待値, 実際の値);
         $this->assertEquals(10, $five->amount);
+
+        //このようにしたい
+        $five->times(3);
+        $this->assertEquals(15, $five->amount);
     }
 }
 // コンパイルを通すために必要な四つがある
