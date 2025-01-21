@@ -15,12 +15,10 @@ class Dollar
         return new Dollar($this->amount * $multiplier);
     }
 
-    public function equals(Object $object)
-    {
-        //Dollarクラスのamountプロパティと比較する
-        $dollar = $object; 
-
+    public function equals(Dollar $object)
+    {   
         //参照が異なっていても値が等しい場合はtrueを返す
-        return $this->amount === $dollar->amount;
+        //厳密比較
+        return $this->amount === $object->amount;
     }
 }
