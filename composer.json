@@ -1,0 +1,18 @@
+{
+    "name": "fujitayuuki/tdd",
+    "description": "\"Test-Driven Development practice in PHP\"",
+    "autoload": {
+        "psr-4": {
+            "Fujitayuuki\\Tdd\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "fy-yuhcan",
+            "email": "fjtyuyuuki4180@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^11.5"
+    }
+}
