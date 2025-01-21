@@ -1,15 +1,17 @@
 <?php
 class Dollar
 {
-    public $amount = 10;
+    public $amount;
 
     public function __construct($amount)
     {
-        //空実装
+        $this->amount = $amount;
     }
 
     public function times($multiplier)
     {
-        //空実装
+        //5*2=10
+        //重複を排除する
+        $this->amount = $this->amount *2;
     }
 }
