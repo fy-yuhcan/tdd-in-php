@@ -1,0 +1,25 @@
+# Composer がインストールしたライブラリ
+/vendor/
+
+# PHPUnit のカバレッジやレポート、キャッシュなど
+/coverage/
+/.cache/
+/build/
+
+# OSごとの不要ファイル
+.DS_Store
+Thumbs.db
+
+# IDE / エディタ専用フォルダ・ファイル
+.idea/
+/.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# ログファイル
+*.log
+
+# 一時ファイル・バックアップファイルなど
+*.swp
+*.bak
+*.tmp
