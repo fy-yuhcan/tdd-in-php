@@ -21,7 +21,18 @@ class MoneyTest extends TestCase
         //Dollarの副作用をどうするか
         //dollarのtimeメソッドを変更しないとコンパイルできない
         $five->times(3);
-        $this->assertEquals(15, $products->amount);
+        $this->assertEquals(15, $products->amount); 
+    }
+
+    //value objectが等しいかどうかをテストする、valueobjectはオブジェクトの中身を変更しない
+    public function testEquality()
+    {
+        // 5ドルを表すDollarオブジェクトを作る
+        $five = new Dollar(5);
+
+        // 5ドルと5ドルが等しいかをテスト
+        // $this->assertTrue(条件); は、条件が真であることをテスト
+        $this->assertTrue($five->equals(new Dollar(5)));
     }
 }
 // コンパイルを通すために必要な四つがある
