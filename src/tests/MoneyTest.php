@@ -14,6 +14,12 @@ class MoneyTest extends TestCase
         $five->times(2);
 
         // 結果が 10 になったかをテスト
+        // $this->assertEquals(期待値, 実際の値);
         $this->assertEquals(10, $five->amount);
     }
 }
+// コンパイルを通すために必要な四つがある
+// Dollarクラスがない
+// コンストラクタがない
+// timesメソッドがない
+// amountプロパティがない
