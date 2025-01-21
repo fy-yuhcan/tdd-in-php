@@ -11,6 +11,7 @@ class MoneyTest extends TestCase
         $five = new Dollar(5);
 
         // timesメソッドで掛け算（乗算）する
+        //これで新しいDollarオブジェクトが返ってくる
         $products = $five->times(2);
 
         // 結果が 10 になったかをテスト
