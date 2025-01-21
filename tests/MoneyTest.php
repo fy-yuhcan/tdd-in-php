@@ -20,7 +20,7 @@ class MoneyTest extends TestCase
 
         //Dollarの副作用をどうするか
         //dollarのtimeメソッドを変更しないとコンパイルできない
-        $five->times(3);
+        $products = $five->times(3);
         $this->assertEquals(15, $products->amount); 
     }
 

@@ -17,6 +17,10 @@ class Dollar
 
     public function equals(Object $object)
     {
-        return true;
+        //Dollarクラスのamountプロパティと比較する
+        $dollar = $object; 
+
+        //参照が異なっていても値が等しい場合はtrueを返す
+        return $this->amount === $dollar->amount;
     }
 }
