@@ -1,7 +1,8 @@
 <?php
 class Dollar
 {
-    public $amount;
+    //テスト変更のためamountフィールドを使うのはDollarクラス自身だけになったのでprivateに変更
+    private $amount;
 
     public function __construct($amount)
     {

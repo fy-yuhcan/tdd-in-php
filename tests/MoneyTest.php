@@ -11,18 +11,17 @@ class MoneyTest extends TestCase
         $five = new Dollar(5);
 
         // timesメソッドで掛け算（乗算）する
-        //これで新しいDollarオブジェクトが返ってくる
-        $products = $five->times(2);
+        //productsは用を成さなくなったため削除
 
         // 結果が 10 になったかをテスト
         // $this->assertEquals(期待値, 実際の値);
-        //値オブジェクトとしての等価性をテストする
-        $this->assertEquals(new Dollar(10), $products);
+        //値オブジェクトとしての等価性をテストする、内部の実装に依存せず「10ドル」という振る舞いそのものをテスト
+        $this->assertEquals(new Dollar(10), $five->times(2));
 
         //Dollarの副作用をどうするか
         //dollarのtimeメソッドを変更しないとコンパイルできない
-        $products = $five->times(3);
-        $this->assertEquals(new Dollar(15), $products); 
+
+        $this->assertEquals(new Dollar(15), $five->times(3)); 
     }
 
     //value objectが等しいかどうかをテストする、valueobjectはオブジェクトの中身を変更しない
