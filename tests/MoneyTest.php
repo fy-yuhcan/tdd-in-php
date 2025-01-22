@@ -38,6 +38,26 @@ class MoneyTest extends TestCase
         //等価性比較を一般化する必要が生まれる
         $this->assertFalse($five->equals(new Dollar(6)));
     }
+
+    //TODO:5CHF*2=10CHF
+    public function testFrancMultiplication()
+    {
+        // 5フランを表すFrancオブジェクトを作る
+        $five = new Franc(5);
+
+        // timesメソッドで掛け算（乗算）する
+        //productsは用を成さなくなったため削除
+
+        // 結果が 10 になったかをテスト
+        // $this->assertEquals(期待値, 実際の値);
+        //値オブジェクトとしての等価性をテストする、内部の実装に依存せず「10ドル」という振る舞いそのものをテスト
+        $this->assertEquals(new Franc(10), $five->times(2));
+
+        //Dollarの副作用をどうするか
+        //dollarのtimeメソッドを変更しないとコンパイルできない
+
+        $this->assertEquals(new Franc(15), $five->times(3)); 
+    }
 }
 // コンパイルを通すために必要な四つがある
 // Dollarクラスがない
