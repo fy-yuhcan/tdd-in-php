@@ -14,11 +14,4 @@ class Franc extends Money
         //重複を排除する
         return new Franc($this->amount * $multiplier);
     }
-
-    public function equals(Franc $object)
-    {   
-        //参照が異なっていても値が等しい場合はtrueを返す
-        //厳密比較
-        return $this->amount === $object->amount;
-    }
 }

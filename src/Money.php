@@ -3,4 +3,11 @@
 class Money
 {
     protected $amount;
+
+    public function equals(Money $object)
+    {   
+        //参照が異なっていても値が等しい場合はtrueを返す
+        //厳密比較
+        return $this->amount === $object->amount;
+    }
 }
