@@ -1,9 +1,8 @@
 <?php
+require_once __DIR__ . '/Money.php';
+
 class Dollar extends Money
 {
-    //テスト変更のためamountフィールドを使うのはDollarクラス自身だけになったのでprivateに変更
-    private $amount;
-
     public function __construct($amount)
     {
         $this->amount = $amount;
