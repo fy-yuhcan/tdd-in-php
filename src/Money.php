@@ -12,4 +12,10 @@ class Money
         //オブジェクトのクラスが等しい場合はtrueを返す
          && get_class($this) === get_class($object);
     }
+
+    //factory method
+    static function dollar($amount)
+    {
+        return new Dollar($amount);
+    }
 }
