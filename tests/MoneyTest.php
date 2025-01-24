@@ -2,6 +2,7 @@
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../src/Dollar.php'; // Dollarクラスの読み込み
+require_once __DIR__ . '/../src/Franc.php'; // Francクラスの読み込み
 
 class MoneyTest extends TestCase
 {
