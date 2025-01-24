@@ -4,6 +4,7 @@
 abstract class Money
 {
     protected $amount;
+    protected $currency;
 
     abstract function times($multiplier);
 
@@ -19,13 +20,16 @@ abstract class Money
     //factory method
     static function dollar($amount)
     {
-        return new Dollar($amount);
+        return new Dollar($amount,null);
     }
 
     static function franc($amount)
     {
-        return new Franc($amount);
+        return new Franc($amount,null);
     }
 
-    abstract function currency();
+    public function currency()
+    {
+        return $this->currency;
+    }
 }
