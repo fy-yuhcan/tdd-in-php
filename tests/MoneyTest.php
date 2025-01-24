@@ -9,8 +9,8 @@ class MoneyTest extends TestCase
 {
     public function testMultiplication()
     {
-        // 5ドルを表すDollarオブジェクトを作る
-        $five = new Dollar(5);
+        // ファクトリーメソッドを使って5ドルを表すDollarオブジェクトを作る
+        $five = Money::dollar(5);
 
         // timesメソッドで掛け算（乗算）する
         //productsは用を成さなくなったため削除
