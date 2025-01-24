@@ -8,6 +8,8 @@ class Money
     {   
         //参照が異なっていても値が等しい場合はtrueを返す
         //厳密比較
-        return $this->amount === $object->amount;
+        return $this->amount === $object->amount
+        //オブジェクトのクラスが等しい場合はtrueを返す
+         && get_class($this) === get_class($object);
     }
 }
