@@ -64,6 +64,14 @@ class MoneyTest extends TestCase
 
         $this->assertEquals(Money::franc(15), $five->times(3)); 
     }
+
+    public function TestCurrency()
+    {
+        //通貨のテスト
+        //通貨の等価性をテストする
+        $this->assertEquals("USD", Money::dollar(1)->currency());
+        $this->assertEquals("CHF", Money::franc(1)->currency());
+    }
 }
 // コンパイルを通すために必要な四つがある
 // Dollarクラスがない

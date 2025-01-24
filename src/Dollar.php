@@ -14,4 +14,9 @@ class Dollar extends Money
         //重複を排除する
         return new Dollar($this->amount * $multiplier);
     }
+
+    public function currency()
+    {
+        return "USD";
+    }
 }

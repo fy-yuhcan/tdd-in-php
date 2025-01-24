@@ -14,4 +14,9 @@ class Franc extends Money
         //重複を排除する
         return new Franc($this->amount * $multiplier);
     }
+
+    public function currency()
+    {
+        return "CHF";
+    }
 }

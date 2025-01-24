@@ -26,4 +26,6 @@ abstract class Money
     {
         return new Franc($amount);
     }
+
+    abstract function currency();
 }
