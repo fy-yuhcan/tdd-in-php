@@ -39,6 +39,10 @@ class MoneyTest extends TestCase
         //等価性が正しくないことを確認する
         //等価性比較を一般化する必要が生まれる
         $this->assertFalse($five->equals(new Dollar(6)));
+
+        //DollarとFrancの比較
+        //DollarとFrancが等しいかどうかをテスト
+        $this->assertFalse((new Dollar(5))->equals(new Franc(5)));
     }
 
     //TODO:5CHF*2=10CHF
