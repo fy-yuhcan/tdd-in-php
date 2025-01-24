@@ -1,5 +1,5 @@
 <?php
-class Dollar
+class Dollar extends Money
 {
     //テスト変更のためamountフィールドを使うのはDollarクラス自身だけになったのでprivateに変更
     private $amount;

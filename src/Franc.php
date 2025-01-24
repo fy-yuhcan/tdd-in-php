@@ -1,5 +1,5 @@
 <?php
-class Franc
+class Franc extends Money
 {
     //テスト変更のためamountフィールドを使うのはFrancクラス自身だけになったのでprivateに変更
     private $amount;
