@@ -1,8 +1,11 @@
 <?php
 //共通親クラスの作成
-class Money
+//abstractで実装をサブクラスに任せる
+abstract class Money
 {
     protected $amount;
+
+    abstract function times($multiplier);
 
     public function equals(Money $object)
     {   
