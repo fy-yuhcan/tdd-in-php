@@ -6,6 +6,12 @@ abstract class Money
     protected $amount;
     protected $currency;
 
+    public function __construct($amount, $currency)
+    {
+        $this->amount = $amount;
+        $this->currency = $currency;
+    }
+    
     abstract function times($multiplier);
 
     public function equals(Money $object)
@@ -20,12 +26,12 @@ abstract class Money
     //factory method
     static function dollar($amount)
     {
-        return new Dollar($amount,null);
+        return new Dollar($amount,"USD");
     }
 
     static function franc($amount)
     {
-        return new Franc($amount,null);
+        return new Franc($amount,"CHF");
     }
 
     public function currency()
