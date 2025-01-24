@@ -18,19 +18,19 @@ class MoneyTest extends TestCase
         // 結果が 10 になったかをテスト
         // $this->assertEquals(期待値, 実際の値);
         //値オブジェクトとしての等価性をテストする、内部の実装に依存せず「10ドル」という振る舞いそのものをテスト
-        $this->assertEquals(new Dollar(10), $five->times(2));
+        $this->assertEquals(Money::dollar(10), $five->times(2));
 
         //Dollarの副作用をどうするか
         //dollarのtimeメソッドを変更しないとコンパイルできない
 
-        $this->assertEquals(new Dollar(15), $five->times(3)); 
+        $this->assertEquals(Money::dollar(15), $five->times(3)); 
     }
 
     //value objectが等しいかどうかをテストする、valueobjectはオブジェクトの中身を変更しない
     public function testEquality()
     {
         // 5ドルを表すDollarオブジェクトを作る
-        $five = new Dollar(5);
+        $five = Money::Dollar(5);
 
         // 5ドルと5ドルが等しいかをテスト
         // $this->assertTrue(条件); は、条件が真であることをテスト
@@ -42,14 +42,14 @@ class MoneyTest extends TestCase
 
         //DollarとFrancの比較
         //DollarとFrancが等しいかどうかをテスト
-        $this->assertFalse((new Dollar(5))->equals(new Franc(5)));
+        $this->assertFalse((Money::Dollar(5))->equals(new Franc(5)));
     }
 
     //TODO:5CHF*2=10CHF
     public function testFrancMultiplication()
     {
         // 5フランを表すFrancオブジェクトを作る
-        $five = new Franc(5);
+        $five = Money::franc(5);
 
         // timesメソッドで掛け算（乗算）する
         //productsは用を成さなくなったため削除
@@ -57,12 +57,12 @@ class MoneyTest extends TestCase
         // 結果が 10 になったかをテスト
         // $this->assertEquals(期待値, 実際の値);
         //値オブジェクトとしての等価性をテストする、内部の実装に依存せず「10ドル」という振る舞いそのものをテスト
-        $this->assertEquals(new Franc(10), $five->times(2));
+        $this->assertEquals(Money::franc(10), $five->times(2));
 
         //Dollarの副作用をどうするか
         //dollarのtimeメソッドを変更しないとコンパイルできない
 
-        $this->assertEquals(new Franc(15), $five->times(3)); 
+        $this->assertEquals(Money::franc(15), $five->times(3)); 
     }
 }
 // コンパイルを通すために必要な四つがある
