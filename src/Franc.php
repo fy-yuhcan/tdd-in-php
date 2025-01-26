@@ -7,11 +7,4 @@ class Franc extends Money
     {
         parent::__construct($amount,$currency);
     }
-
-    public function times($multiplier)
-    {
-        //5*2=10
-        //重複を排除する
-        return new Money($this->amount * $multiplier,$this->currency);
-    }
 }

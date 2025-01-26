@@ -13,7 +13,7 @@ class Money
     }
 
     function times($multiplier){
-        return new Money($this->amount * $multiplier, $this->currency);
+        return new static($this->amount * $multiplier, $this->currency);
     }
 
     public function equals(Money $object)
