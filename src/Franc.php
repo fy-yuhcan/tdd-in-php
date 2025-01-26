@@ -12,6 +12,6 @@ class Franc extends Money
     {
         //5*2=10
         //重複を排除する
-        return Money::franc($this->amount * $multiplier);
+        return new Franc($this->amount * $multiplier,$this->currency);
     }
 }
