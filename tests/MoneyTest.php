@@ -34,15 +34,15 @@ class MoneyTest extends TestCase
 
         // 5ドルと5ドルが等しいかをテスト
         // $this->assertTrue(条件); は、条件が真であることをテスト
-        $this->assertTrue($five->equals(new Dollar(5)));
+        $this->assertTrue($five->equals(Money::Dollar(5)));
 
         //等価性が正しくないことを確認する
         //等価性比較を一般化する必要が生まれる
-        $this->assertFalse($five->equals(new Dollar(6)));
+        $this->assertFalse($five->equals(Money::Dollar(6)));
 
         //DollarとFrancの比較
         //DollarとFrancが等しいかどうかをテスト
-        $this->assertFalse((Money::Dollar(5))->equals(new Franc(5)));
+        $this->assertFalse((Money::Dollar(5))->equals(Money::Franc(5)));
     }
 
     //TODO:5CHF*2=10CHF
