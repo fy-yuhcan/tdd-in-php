@@ -12,6 +12,6 @@ class Dollar extends Money
     {
         //5*2=10
         //重複を排除する
-        return new Dollar($this->amount * $multiplier, $this->currency);
+        return new Money($this->amount * $multiplier, $this->currency);
     }
 }

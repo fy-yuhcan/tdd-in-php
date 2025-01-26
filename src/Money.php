@@ -1,7 +1,7 @@
 <?php
 //共通親クラスの作成
 //abstractで実装をサブクラスに任せる
-abstract class Money
+class Money
 {
     protected $amount;
     protected $currency;
@@ -11,8 +11,10 @@ abstract class Money
         $this->amount = $amount;
         $this->currency = $currency;
     }
-    
-    abstract function times($multiplier);
+
+    function times($multiplier){
+        return new Money($this->amount * $multiplier, $this->currency);
+    }
 
     public function equals(Money $object)
     {   
@@ -20,7 +22,12 @@ abstract class Money
         //厳密比較
         return $this->amount === $object->amount
         //オブジェクトのクラスが等しい場合はtrueを返す
-         && get_class($this) === get_class($object);
+         && $this->currency() === $object->currency();
+    }
+
+    public function __toString()
+    {
+        return $this->amount . " " . $this->currency;
     }
 
     //factory method
