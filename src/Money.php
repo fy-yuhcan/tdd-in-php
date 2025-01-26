@@ -1,7 +1,9 @@
 <?php
 //共通親クラスの作成
 //abstractで実装をサブクラスに任せる
-class Money
+require_once __DIR__ . '/Expression.php';
+
+class Money implements Expression
 {
     protected $amount;
     protected $currency;
@@ -44,5 +46,16 @@ class Money
     public function currency()
     {
         return $this->currency;
+    }
+
+    public function plus(Money $addend):Expression
+    {
+        return new Money($this->amount + $addend->amount, $this->currency);
+    }
+
+    public function reduce($to): Expression
+    {
+        // 通貨変換のロジックをここに実装
+        return $this;
     }
 }

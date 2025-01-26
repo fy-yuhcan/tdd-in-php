@@ -1,9 +1,8 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/../src/Dollar.php'; // Dollarクラスの読み込み
-require_once __DIR__ . '/../src/Franc.php'; // Francクラスの読み込み
 require_once __DIR__ . '/../src/Money.php'; // Moneyクラスの読み込み
+require_once __DIR__ . '/../src/Bank.php'; // Bankクラスの読み込み
 
 class MoneyTest extends TestCase
 {
@@ -37,5 +36,16 @@ class MoneyTest extends TestCase
         //通貨の等価性をテストする
         $this->assertEquals("USD", Money::dollar(1)->currency());
         $this->assertEquals("CHF", Money::franc(1)->currency());
+    }
+
+    //加算のテスト
+    public function testSimpleAddition()
+    {
+        $five = Money::dollar(5);
+        $sum = $five->plus($five);
+        $bank = new Bank();
+        $sum = Money::dollar(5)->plus(Money::dollar(5));
+        $reduced = $bank->reduce($sum, "USD");
+        $this->assertEquals(Money::dollar(10), $reduced);
     }
 }
