@@ -12,16 +12,10 @@ class MoneyTest extends TestCase
         // ファクトリーメソッドを使って5ドルを表すDollarオブジェクトを作る
         $five = Money::dollar(5);
 
-        // timesメソッドで掛け算（乗算）する
-        //productsは用を成さなくなったため削除
-
         // 結果が 10 になったかをテスト
         // $this->assertEquals(期待値, 実際の値);
         //値オブジェクトとしての等価性をテストする、内部の実装に依存せず「10ドル」という振る舞いそのものをテスト
         $this->assertEquals(Money::dollar(10), $five->times(2));
-
-        //Dollarの副作用をどうするか
-        //dollarのtimeメソッドを変更しないとコンパイルできない
 
         $this->assertEquals(Money::dollar(15), $five->times(3)); 
     }
@@ -37,26 +31,6 @@ class MoneyTest extends TestCase
         $this->assertFalse((Money::dollar(5))->equals(Money::franc(5)));
     }
 
-    //TODO:5CHF*2=10CHF
-    public function testFrancMultiplication()
-    {
-        // 5フランを表すFrancオブジェクトを作る
-        $five = Money::franc(5);
-
-        // timesメソッドで掛け算（乗算）する
-        //productsは用を成さなくなったため削除
-
-        // 結果が 10 になったかをテスト
-        // $this->assertEquals(期待値, 実際の値);
-        //値オブジェクトとしての等価性をテストする、内部の実装に依存せず「10ドル」という振る舞いそのものをテスト
-        $this->assertEquals(Money::franc(10), $five->times(2));
-
-        //Dollarの副作用をどうするか
-        //dollarのtimeメソッドを変更しないとコンパイルできない
-
-        $this->assertEquals(Money::franc(15), $five->times(3)); 
-    }
-
     public function TestCurrency()
     {
         //通貨のテスト
@@ -65,8 +39,3 @@ class MoneyTest extends TestCase
         $this->assertEquals("CHF", Money::franc(1)->currency());
     }
 }
-// コンパイルを通すために必要な四つがある
-// Dollarクラスがない
-// コンストラクタがない
-// timesメソッドがない
-// amountプロパティがない
