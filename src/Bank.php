@@ -8,10 +8,9 @@ class Bank
     {
         //Moneyオブジェクトの場合はそのまま返す
         if ($source instanceof Money) {
-            return $source;
+            return $source->reduce($to);
         }
-        //キャストを行っている
-        //sumフィールドにアクセスしているしかもそのフィールドにさらにアクセスしている
+
         $sum = $source;
         return $sum->reduce($to);
     }

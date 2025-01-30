@@ -55,7 +55,6 @@ class Money implements Expression
 
     public function reduce($to): Expression
     {
-        // 通貨変換のロジックをここに実装
         return $this;
     }
 }
