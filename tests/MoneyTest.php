@@ -49,6 +49,7 @@ class MoneyTest extends TestCase
         $this->assertEquals(Money::dollar(10), $reduced);
     }
 
+    //plusメソッドが返すオブジェクトがaugendとaddendを持っているかをテスト
     public function testPlusReturnsSum()
     {
         $five = Money::dollar(5);
