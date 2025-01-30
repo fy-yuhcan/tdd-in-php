@@ -50,7 +50,7 @@ class Money implements Expression
 
     public function plus(Money $addend):Expression
     {
-        return new Money($this->amount + $addend->amount, $this->currency);
+        return new Sum($this, $addend);
     }
 
     public function reduce($to): Expression
