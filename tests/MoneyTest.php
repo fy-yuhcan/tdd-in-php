@@ -3,6 +3,8 @@ use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../src/Money.php'; // Moneyクラスの読み込み
 require_once __DIR__ . '/../src/Bank.php'; // Bankクラスの読み込み
+require_once __DIR__ . '/../src/Expression.php'; // Expressionクラスの読み込み
+require_once __DIR__ . '/../src/Sum.php'; // Sumクラスの読み込み
 
 class MoneyTest extends TestCase
 {

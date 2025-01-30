@@ -5,7 +5,7 @@ require_once __DIR__ . '/Expression.php';
 
 class Money implements Expression
 {
-    protected $amount;
+    public $amount;
     protected $currency;
 
     public function __construct($amount, $currency)
