@@ -55,6 +55,8 @@ class Money implements Expression
 
     public function reduce($to): Expression
     {
-        return $this;
+        //moneyクラスのreduceメソッドが通貨変換をしている ===はjavaのequals
+        $rate = (($this->currency === "CHF") && $to === "USD") ? 2:1;
+        return new Money($this->amount/ $rate,$to);
     }
 }
