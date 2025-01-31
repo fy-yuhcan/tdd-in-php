@@ -8,4 +8,10 @@ class Bank
     {
         return $source->reduce($to);
     }
+
+    //testReduceMoneyDifferentCurrencyテストを通すため空実装
+    public function addRate($from,$to,$rate)
+    {  
+          
+    }
 }
