@@ -24,6 +24,12 @@ class Bank
     //bankで為替レートの計算をする
     public function rate($from,$to)
     {
-        return (($from === "CHF") && $to === "USD") ? 2:1;
+        if ($from === $to) {
+        return 1;
+        } 
+        
+        $pair = new Pair($from,$to);
+        $key = (string)$pair;
+        return $this->rates[$key];
     }
 }

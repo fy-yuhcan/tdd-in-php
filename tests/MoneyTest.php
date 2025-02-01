@@ -87,4 +87,11 @@ class MoneyTest extends TestCase
 
         $this->assertEquals(Money::dollar(1),$result);
     }
+
+    //USDからUSDを与えられたときは1を返す
+    public function testIdentityRate()
+    {
+        $bank = new Bank();
+        $this->assertEquals(1,$bank->rate("USD","USD"));
+    }
 }
