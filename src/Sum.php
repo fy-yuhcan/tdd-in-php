@@ -8,6 +8,7 @@ class Sum implements Expression
     public $augend;
     public $addend;
 
+    //ここでmoneyオブジェクトを受け取っている
     public function __construct(Expression $augend, Expression $addend)
     {
         $this->augend = $augend;
