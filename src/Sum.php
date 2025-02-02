@@ -8,7 +8,7 @@ class Sum implements Expression
     public $augend;
     public $addend;
 
-    public function __construct(Money $augend, Money $addend)
+    public function __construct(Expression $augend, Expression $addend)
     {
         $this->augend = $augend;
         $this->addend = $addend;
@@ -16,7 +16,8 @@ class Sum implements Expression
 
     public function reduce(Bank $bank,$to): Expression
     {
-        $amount = $this->augend->amount + $this->addend->amount;
+        //augendとaddendを同じ通貨に換算してから足し算する
+        $amount = $this->augend->reduce($bank,$to)->amount + $this->addend->reduce($bank,$to)->amount;
         return new Money($amount, $to);
     }
 }

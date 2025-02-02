@@ -48,7 +48,7 @@ class Money implements Expression
         return $this->currency;
     }
 
-    public function plus(Money $addend):Expression
+    public function plus(Expression $addend):Expression
     {
         return new Sum($this, $addend);
     }
