@@ -105,4 +105,19 @@ class MoneyTest extends TestCase
         $result = $bank->reduce($fiveBucks->plus($tenFrancs),"USD");
         $this->assertEquals(Money::dollar(10),$result);
     }
+
+    //Sumのplusメソッドが正しく動作するかをテスト
+    public function testSumPlusMoney()
+    {
+        $fiveBucks = Money::dollar(5);
+        $tenFrancs = Money::franc(10);
+        $bank = new Bank();
+        $bank->addRate("CHF","USD",2);
+        $sum = new Sum($fiveBucks,$tenFrancs);
+        $sum->plus($fiveBucks);
+        $result = $bank->reduce($sum,"USD");
+        $this->assertEquals(Money::dollar(15),$result);
+    }
+
+
 }
